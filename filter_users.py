@@ -18,6 +18,7 @@ def filter_users_by_email(email):
 
 
 def filter_users_by_age(age):
+    """Return users with an exact age match."""
     users = load_users()
     return [user for user in users if user.get("age") == age]
 
