@@ -1,7 +1,6 @@
 import json
 
 
-
 def load_users():
     with open("users.json", "r", encoding="utf-8") as file:
         return json.load(file)
@@ -13,6 +12,7 @@ def filter_users_by_name(name):
 
 
 def filter_users_by_email(email):
+    """Return users whose email matches, ignoring letter case."""
     users = load_users()
     return [user for user in users if user.get("email", "").lower() == email.lower()]
 
